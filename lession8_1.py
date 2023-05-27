@@ -12,4 +12,6 @@ else:
 
 dataFrame = pd.DataFrame(data=all_data,columns=['sna','tot','sbi','sarea','mday','ar','bemp','act'])
 #dataFrame.info()
-dataFrame
+mask = dataFrame['sbi'] <=3
+mask_datafram = dataFrame[mask]
+mask_datafram.to_excel('可借小於3.xlsx')
