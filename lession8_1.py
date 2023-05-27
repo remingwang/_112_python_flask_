@@ -12,6 +12,8 @@ else:
 
 dataFrame = pd.DataFrame(data=all_data,columns=['sna','tot','sbi','sarea','mday','ar','bemp','act'])
 #dataFrame.info()
-mask = dataFrame['sbi'] <=3
+min = int(input("請輸入要查詢的可借數量"))
+mask = dataFrame['sbi'] <= min
 mask_datafram = dataFrame[mask]
-mask_datafram.to_excel('可借小於3.xlsx')
+filename = f'可借數量小於{min}的站點.xlsx'
+mask_datafram.to_excel(filename)
