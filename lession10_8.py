@@ -1,6 +1,8 @@
 import requests
 import pandas as pd
 import streamlit as st
+
+#下載youbike資料
 url = 'https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json'
 respones = requests.request('GET',url)
 if respones.status_code == 200:
