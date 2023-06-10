@@ -26,5 +26,9 @@ mask_datafram = dataFrame1[mask]
 count = mask_datafram["車數"].count()
 st.write('符合條件的站點數', count)
 st.dataframe(mask_datafram)
+
 option = st.selectbox('行政區域',areas)
-st.write('You selected:', option)
+mask = dataFrame1['行政區'] == option
+dataFrame2 = dataFrame1[mask]
+st.write('You selected:', option,":",len(dataFrame2.index))
+st.dataframe(dataFrame2)
